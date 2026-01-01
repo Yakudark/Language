@@ -23,6 +23,7 @@ export default function App() {
     Merriweather_400Regular,
     Merriweather_700Bold,
     JetBrainsMono_400Regular,
+    'Tengwar': require('./assets/fonts/tngan.ttf'),
   });
 
   React.useEffect(() => {

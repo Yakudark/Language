@@ -1,16 +1,17 @@
 import React from 'react';
 import { TouchableOpacity, View, ImageBackground } from 'react-native';
 import { SansText, SerifText } from './Typography';
-import { Language } from '../data/languages';
+import { LanguageModel } from '../models/database';
+import { getLanguageImage } from '../utils/assetManager';
 
-export const LanguageItem = ({ language, onPress }: { language: Language, onPress: () => void }) => (
+export const LanguageItem = ({ language, onPress }: { language: LanguageModel, onPress: () => void }) => (
   <TouchableOpacity 
     onPress={onPress}
     className="mx-4 mb-6 rounded-3xl overflow-hidden shadow-sm bg-white border border-brand-100"
     style={{ elevation: 3 }}
   >
     <ImageBackground 
-      source={language.image} 
+      source={getLanguageImage(language.image)} 
       className="h-48 justify-end"
       resizeMode="cover"
     >

@@ -39,14 +39,16 @@ function TabNavigator() {
         name="Archive" 
         component={HomeScreen} 
         options={{
-          tabBarIcon: ({ color, size }) => <Library size={size - 2} color={color} />
+          tabBarIcon: ({ color, size }) => <Library size={size - 2} color={color} />,
+          tabBarLabel: 'Archives'
         }}
       />
       <Tab.Screen 
         name="Dictionary" 
         component={DictionaryScreen} 
         options={{
-          tabBarIcon: ({ color, size }) => <Search size={size - 2} color={color} />
+          tabBarIcon: ({ color, size }) => <Search size={size - 2} color={color} />,
+          tabBarLabel: 'Lexique'
         }}
       />
       <Tab.Screen 
@@ -54,7 +56,7 @@ function TabNavigator() {
         component={ContributionScreen} 
         options={{
           tabBarIcon: ({ color, size }) => <PenTool size={size - 2} color={color} />,
-          tabBarLabel: 'Draft'
+          tabBarLabel: 'Contribuer'
         }}
       />
     </Tab.Navigator>

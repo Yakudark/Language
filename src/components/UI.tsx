@@ -7,7 +7,7 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-export const SearchBar = ({ value, onChangeText, placeholder = "Search languages..." }: { value: string, onChangeText: (t: string) => void, placeholder?: string }) => (
+export const SearchBar = ({ value, onChangeText, placeholder = "Rechercher..." }: { value: string, onChangeText: (t: string) => void, placeholder?: string }) => (
   <View className="flex-row items-center bg-gray-100 px-4 py-2 rounded-xl mx-4 my-2 border border-gray-200">
     <Search size={18} color="#9CA3AF" />
     <TextInput

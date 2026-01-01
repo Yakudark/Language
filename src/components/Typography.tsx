@@ -23,9 +23,27 @@ export const SansText = ({ style, ...props }: TextProps) => (
   />
 );
 
+export const NativeText = ({ style, lang, ...props }: TextProps & { lang?: string }) => {
+  const lowercaseLang = lang?.toLowerCase() || '';
+  const isSindarin = lowercaseLang.includes('sindarin');
+  const fontFamily = isSindarin ? 'Tengwar' : 'Merriweather_400Regular';
+  
+  return (
+    <Text 
+      style={[
+        style,
+        { fontFamily }, 
+        isSindarin && { fontWeight: 'normal', fontStyle: 'normal' } // Force regular to avoid OS fallback
+      ]} 
+      {...props} 
+    />
+  );
+};
+
 cssInterop(SerifText, { className: 'style' });
 cssInterop(MonoText, { className: 'style' });
 cssInterop(SansText, { className: 'style' });
+cssInterop(NativeText, { className: 'style' });
 
 export const Heading = ({ children, level = 1, className = "" }: { children: React.ReactNode, level?: 1 | 2 | 3, className?: string }) => {
   const sizes = {
